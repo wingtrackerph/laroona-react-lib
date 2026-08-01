@@ -1,0 +1,45 @@
+import { default as React } from 'react';
+import { AppRequest } from '../contexts/request-context';
+interface Properties {
+    title: string;
+    requests: AppRequest[];
+    tableRequestKey: string;
+    detailsModalId: string;
+    detailsModal?: any;
+    addModalId?: string;
+    addModal?: any;
+    hasActionAdd?: boolean;
+    hasActionBack?: boolean;
+    hasSearchBar?: boolean;
+    hasDownloadButton?: boolean;
+    hasSecondaryDownloadButton?: boolean;
+    downloadText?: string;
+    secondaryDownloadText?: string;
+    isDownloading?: boolean;
+    isSecondaryDownloading?: boolean;
+    keysToSearch: string[];
+    searchTableOnly?: boolean;
+    filterBar?: any;
+    tableHeaders: string[];
+    tableColumns: any[];
+    isTableRowClickable?: boolean;
+    tablePageSize?: number;
+    customActionIcon?: any;
+    customActionTooltip?: string;
+    tableMarginTop?: number;
+    headerHeight?: number;
+    onUseEffect?: () => void;
+    onRenderRowColor?: (item: any) => string;
+    onShowDetailsModal?: (item: any) => void;
+    onRowEntryClick?: (item: any) => void;
+    onRowClick?: (item: any) => void;
+    onRowCustomClick?: (item: any) => void;
+    onRowDeleteClick?: (item: any) => void;
+    onSearch?: (item: any) => void;
+    onDownloadClick?: () => void;
+    onSecondaryDownloadClick?: () => void;
+    renderLayout?: (content: React.ReactNode) => React.ReactNode;
+}
+declare const Overview: (properties: Properties) => React.JSX.Element;
+export default Overview;
+//# sourceMappingURL=overview.d.ts.map
