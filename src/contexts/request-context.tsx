@@ -49,6 +49,7 @@ interface RequestContextType {
     clearRequest: (key: string) => void;
     clearPostRequest: (key: string) => void;
     clearRequests: () => void;
+    getRequestKeys: () => string[];
 }
 
 const RequestContext = React.createContext<RequestContextType>(
@@ -552,6 +553,10 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
         return dataProperty.id == 0;
     };
 
+    const getRequestKeys = () => {
+        return requests.map((request) => request.key);
+    };
+
     return (
         <RequestContext.Provider
             value={{
@@ -570,6 +575,7 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
                 clearRequest,
                 clearPostRequest,
                 clearRequests,
+                getRequestKeys,
             }}
         >
             {children}

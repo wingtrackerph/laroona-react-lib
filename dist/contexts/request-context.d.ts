@@ -37,6 +37,7 @@ interface RequestContextType {
     clearRequest: (key: string) => void;
     clearPostRequest: (key: string) => void;
     clearRequests: () => void;
+    getRequestKeys: () => string[];
 }
 export declare const useRequestContext: () => RequestContextType;
 export interface AppRequest {
