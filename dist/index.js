@@ -53107,9 +53107,10 @@ const uX = (e) => {
   ] });
 }, JX = (e) => {
   const { getRequest: t, getPostRequest: n, fetchRequest: r, notifyPostRequests: o } = Va(), { openModal: a, closeModal: i } = gx(), { authUser: l } = qu(), c = BC(), [u, d] = re.useState(null), { fetchRequests: f, filterRequestData: m } = Va();
-  l && e.requests && Qt(() => {
-    f(e.requests, !1);
-  }, []);
+  Qt(() => {
+    var y;
+    !l || !((y = e.requests) != null && y.length) || f(e.requests, !1);
+  }, [l, e.requests, f]);
   const g = t(e.tableRequestKey), p = g.isPaginated;
   p && !u && d(p);
   const b = (y = null) => {

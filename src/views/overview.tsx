@@ -58,11 +58,13 @@ const Overview = (properties: Properties) => {
 
     const { fetchRequests, filterRequestData } = useRequestContext();
 
-    if (authUser && properties.requests) {
-        useEffect(() => {
-            fetchRequests(properties.requests, false);
-        }, []);
-    }
+    useEffect(() => {
+        if (!authUser || !properties.requests?.length) {
+            return;
+        }
+
+        fetchRequests(properties.requests, false);
+    }, [authUser, properties.requests, fetchRequests]);
 
     const request = getRequest(properties.tableRequestKey);
     const isPaginated = request.isPaginated;
