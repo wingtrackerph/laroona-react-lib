@@ -1,6 +1,7 @@
 import React from "react";
 import AppModal from "./app-modal";
-import { useRequestContext, useModalContext } from "@wingtrackerph/laroona-react-lib";
+import { useRequestContext } from "../contexts/request-context";
+import { useModalContext } from "../contexts/modal-context";
 
 interface Properties {
     id: string;
