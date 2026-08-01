@@ -56,7 +56,6 @@ const BasePage = (properties: BasePageProperties) => {
     const { notificationData } = useNotificationContext();
 
     const location = useLocation();
-    const previousPathRef = React.useRef(location.pathname);
 
     function getMenuItem(
         key: React.Key,
@@ -138,15 +137,11 @@ const BasePage = (properties: BasePageProperties) => {
     const onClick: MenuProps["onClick"] = (e) => {
         const path = e.key;
         if (path === "logout") return;
+        if (location.pathname !== path) {
+            clearRequests();
+        }
         navigate(path);
     };
-
-    useEffect(() => {
-        if (previousPathRef.current !== location.pathname) {
-            clearRequests();
-            previousPathRef.current = location.pathname;
-        }
-    }, [location.pathname]);
 
     const findParentKey = (
         items: BasePageMenuItem[],
