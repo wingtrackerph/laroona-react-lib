@@ -4,7 +4,7 @@
     "private": false,
     "type": "module",
     "files": [
-       "dist"
+        "dist"
     ],
     "scripts": {
         "build": "vite build",
@@ -21,6 +21,7 @@
         "@types/react-dom": "^19.1.9",
         "@typescript-eslint/eslint-plugin": "^8.42.0",
         "@typescript-eslint/parser": "^8.42.0",
+        "@vitejs/plugin-react": "^4.0.0",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.9",
         "concurrently": "^9.0.1",
@@ -28,7 +29,7 @@
         "eslint-plugin-unused-imports": "^4.2.0",
         "postcss": "^8.4.49",
         "vite": "^6.0",
-        "@vitejs/plugin-react": "^4.0.0"
+        "vite-plugin-dts": "^5.0.3"
     },
     "dependencies": {
         "@ant-design/v5-patch-for-react-19": "^1.0.3",
@@ -43,9 +44,13 @@
         "qrcode": "^1.5.4",
         "react-router-dom": "^7.0.2"
     },
-   "main": "./dist/index.js",
-   "module": "./dist/index.js",
-   "exports": {
-     ".": "./dist/index.js"
-   }
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "module": "./dist/index.js",
+    "exports": {
+        ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+        }
+    }
 }
