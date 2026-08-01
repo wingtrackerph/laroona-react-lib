@@ -52,6 +52,10 @@ const Overview = (properties: Properties) => {
     const { openModal, closeModal } = useModalContext();
     const { authUser } = useAuthContext();
     const navigate = useNavigate();
+    const [isInitialPaginated, setIsInitialPaginated] = React.useState<
+        boolean | null
+    >(null);
+
     const { fetchRequests, filterRequestData } = useRequestContext();
 
     useEffect(() => {
@@ -68,6 +72,9 @@ const Overview = (properties: Properties) => {
 
     const request = getRequest(properties.tableRequestKey);
     const isPaginated = request.isPaginated;
+    if (isPaginated && !isInitialPaginated) {
+        setIsInitialPaginated(isPaginated);
+    }
 
     const showDetailsModal = (item: any = null) => {
         if (!item) {
@@ -174,7 +181,7 @@ const Overview = (properties: Properties) => {
                     properties.onSecondaryDownloadClick
                 }
                 onSearch={(value) => {
-                    if (isPaginated && !properties.searchTableOnly) {
+                    if (isInitialPaginated && !properties.searchTableOnly) {
                         searchRequest(value);
                         return;
                     }
