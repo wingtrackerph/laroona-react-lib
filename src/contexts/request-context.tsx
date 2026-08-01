@@ -178,6 +178,8 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
         requestsToFetch: AppRequest[],
         forceFetch = true,
     ) => {
+        console.trace("[RequestContext] fetchRequests trace");
+        
         for (const requestToFetch of requestsToFetch) {
             const request = getRequest(requestToFetch.key);
             request.path = requestToFetch.path;
