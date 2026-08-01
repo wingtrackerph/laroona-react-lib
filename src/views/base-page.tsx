@@ -143,6 +143,7 @@ const BasePage = (properties: BasePageProperties) => {
 
     useEffect(() => {
         if (previousPathRef.current !== location.pathname) {
+            console.log("Will clear requests");
             clearRequests();
             previousPathRef.current = location.pathname;
         }

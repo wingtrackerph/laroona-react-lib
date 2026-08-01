@@ -5477,7 +5477,6 @@ const dx = re.createContext({}), fx = () => re.useContext(dx), VX = ({ children:
   }, f = ($) => {
     $.isDone = !1, m([$]);
   }, m = ($, E = !0) => {
-    console.trace("[RequestContext] fetchRequests trace");
     for (const N of $) {
       const I = p(N.key);
       if (I.path = N.path, I.onSuccess = N.onSuccess, !E && (I.isLoading || I.isDone))
@@ -52679,7 +52678,7 @@ const uX = (e) => {
     I !== "logout" && d(I);
   };
   qt(() => {
-    h.current !== v.pathname && (p(), h.current = v.pathname);
+    h.current !== v.pathname && (console.log("Will clear requests"), p(), h.current = v.pathname);
   }, [v.pathname]);
   const $ = (N, I) => {
     for (const M of N) {
