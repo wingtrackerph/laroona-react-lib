@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/auth-context";
 import { useModalContext } from "../contexts/modal-context";
 import { AppRequest, useRequestContext } from "../contexts/request-context";
-import AppTable from "./app-table"; 
+import AppTable from "./app-table";
 
 interface Properties {
     title: string;
@@ -52,6 +52,7 @@ const Overview = (properties: Properties) => {
     const { openModal, closeModal } = useModalContext();
     const { authUser } = useAuthContext();
     const navigate = useNavigate();
+    const hasFetchedInitialRequests = React.useRef(false);
     const [isInitialPaginated, setIsInitialPaginated] = React.useState<
         boolean | null
     >(null);
@@ -59,12 +60,17 @@ const Overview = (properties: Properties) => {
     const { fetchRequests, filterRequestData } = useRequestContext();
 
     useEffect(() => {
-        if (!authUser || !properties.requests?.length) {
+        if (
+            hasFetchedInitialRequests.current ||
+            !authUser ||
+            !properties.requests?.length
+        ) {
             return;
         }
 
+        hasFetchedInitialRequests.current = true;
         fetchRequests(properties.requests, false);
-    }, [authUser, properties.requests, fetchRequests]);
+    }, [authUser]);
 
     const request = getRequest(properties.tableRequestKey);
     const isPaginated = request.isPaginated;

@@ -44,6 +44,7 @@
     "dependencies": {
         "@ant-design/v5-patch-for-react-19": "^1.0.3",
         "@react-pdf/renderer": "^4.3.0",
+        "@wingtrackerph/laroona-react-lib": "github:wingtrackerph/laroona-react-lib",
         "antd": "^5.23.3",
         "aos": "^2.3.4",
         "canvas": "^3.1.2",
