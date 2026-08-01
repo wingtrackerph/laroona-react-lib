@@ -1,5 +1,4 @@
 import { default as React } from 'react';
-import { BasePageMenuItem } from './base-page';
 import { AppRequest } from '../contexts/request-context';
 interface Properties {
     title: string;
@@ -40,13 +39,6 @@ interface Properties {
     onDownloadClick?: () => void;
     onSecondaryDownloadClick?: () => void;
     renderLayout?: (content: React.ReactNode) => React.ReactNode;
-    useBasePageLayout?: boolean;
-    menuItems?: BasePageMenuItem[];
-    onLogout?: () => void;
-    accountLabel?: string;
-    appTitle?: string;
-    appSubtitle?: string;
-    disableDefaultAccountMenu?: boolean;
 }
 declare const Overview: (properties: Properties) => React.JSX.Element;
 export default Overview;
