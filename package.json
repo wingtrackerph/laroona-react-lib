@@ -1,9 +1,14 @@
 {
-    "name": "@wingtrackerph/laroona-lib",
+    "name": "@wingtrackerph/laroona-react-lib",
     "version": "1.0.0",
     "private": false,
     "type": "module",
+    "files": [
+       "dist"
+    ],
     "scripts": {
+        "build": "vite build",
+        "dev": "vite",
         "lint": "eslint resources/js --ext .ts,.tsx,.js,.jsx",
         "lint:fix": "eslint resources/js --ext .ts,.tsx,.js,.jsx --fix",
         "lint:unused": "eslint resources/js --ext .ts,.tsx,.js,.jsx --rule 'unused-imports/no-unused-imports: error'"
@@ -21,8 +26,9 @@
         "concurrently": "^9.0.1",
         "eslint": "^9.35.0",
         "eslint-plugin-unused-imports": "^4.2.0",
-        "laravel-vite-plugin": "^1.0",
-        "postcss": "^8.4.49"
+        "postcss": "^8.4.49",
+        "vite": "^6.0",
+        "@vitejs/plugin-react": "^4.0.0"
     },
     "dependencies": {
         "@ant-design/v5-patch-for-react-19": "^1.0.3",
@@ -36,5 +42,10 @@
         "moment": "^2.30.1",
         "qrcode": "^1.5.4",
         "react-router-dom": "^7.0.2"
-    }
+    },
+   "main": "./dist/index.js",
+   "module": "./dist/index.js",
+   "exports": {
+     ".": "./dist/index.js"
+   }
 }
