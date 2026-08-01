@@ -139,7 +139,8 @@ const BasePage = (properties: BasePageProperties) => {
         if (path === "logout") return;
         navigate(path);
         if (location.pathname !== path) {
-            setTimeout(() => clearRequests(), 0);
+            clearRequests();
+            // setTimeout(() => clearRequests(), 0);
         }
     };
 

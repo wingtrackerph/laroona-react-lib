@@ -99,6 +99,7 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
 
     const [requests, setRequests] = React.useState<AppRequest[]>([]);
     const [postRequests, setPostRequests] = React.useState<AppRequest[]>([]);
+    const generationRef = React.useRef(0);
 
     const createRequest = (parameters: {
         key: string;
@@ -179,6 +180,7 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
         requestsToFetch: AppRequest[],
         forceFetch = true,
     ) => {
+        const capturedGeneration = generationRef.current;
         for (const requestToFetch of requestsToFetch) {
             const request = getRequest(requestToFetch.key);
             request.path = requestToFetch.path;
@@ -211,6 +213,7 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
             notifyRequests();
             ApiService.get<{ data: any }>(request.pathWithParams)
                 .then((response) => {
+                    if (generationRef.current !== capturedGeneration) return;
                     if (!response.data) {
                         handleErrorFromResponse(request, response);
                         return;
@@ -529,6 +532,7 @@ export const RequestProvider: React.FC<RequestProviderProps> = ({
     };
 
     const clearRequests = () => {
+        generationRef.current += 1;
         setRequests([]);
         setPostRequests([]);
     };
