@@ -57,12 +57,23 @@ const Overview = (properties: Properties) => {
     >(null);
 
     const { fetchRequests, filterRequestData } = useRequestContext();
+    const fetchRequestsRef = React.useRef(fetchRequests);
+
+    React.useEffect(() => {
+        fetchRequestsRef.current = fetchRequests;
+    }, [fetchRequests]);
+
+    const requestsDependencyKey = React.useMemo(() => {
+        return (properties.requests ?? [])
+            .map((request) => `${request.key}:${request.path}`)
+            .join("|");
+    }, [properties.requests]);
 
     useEffect(() => {
         if (authUser && properties.requests?.length > 0) {
-            fetchRequests(properties.requests, false);
+            fetchRequestsRef.current(properties.requests, false);
         }
-    }, [authUser, properties.requests, fetchRequests]);
+    }, [authUser, properties.requests, requestsDependencyKey]);
 
     useEffect(() => {
         if (properties.onUseEffect) {
