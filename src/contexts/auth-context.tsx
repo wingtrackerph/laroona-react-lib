@@ -1,13 +1,11 @@
 import React from "react";
 import { createContext, useContext, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../helpers/local-storage";
 
 const AuthContext = createContext<any>({});
 
 export const AuthProvider: React.FC<any> = ({ children }) => {
     const [authUser, setAuthUser] = useLocalStorage("user", null);
-    const navigate = useNavigate();
 
     // call this function when you want to authenticate the user
     const login = async (loggedUser: any) => {
@@ -17,7 +15,9 @@ export const AuthProvider: React.FC<any> = ({ children }) => {
     // call this function to sign out logged in user
     const logout = () => {
         setAuthUser(null);
-        navigate("/login");
+        if (typeof window !== "undefined") {
+            window.location.assign("/login");
+        }
     };
 
     const updateAuthUser = (updatedUser: any) => {
