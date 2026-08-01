@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import PageHeader from "./page-header";
+import BasePage, { BasePageMenuItem } from "./base-page";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/auth-context";
 import { useModalContext } from "../contexts/modal-context";
@@ -45,6 +46,15 @@ interface Properties {
     onDownloadClick?: () => void;
     onSecondaryDownloadClick?: () => void;
     renderLayout?: (content: React.ReactNode) => React.ReactNode;
+
+    // Preferred layout API for library consumers.
+    useBasePageLayout?: boolean;
+    menuItems?: BasePageMenuItem[];
+    onLogout?: () => void;
+    accountLabel?: string;
+    appTitle?: string;
+    appSubtitle?: string;
+    disableDefaultAccountMenu?: boolean;
 }
 const Overview = (properties: Properties) => {
     const { getRequest, getPostRequest, fetchRequest, notifyPostRequests } =
@@ -219,7 +229,21 @@ const Overview = (properties: Properties) => {
 
     return (
         <>
-            {properties.renderLayout ? properties.renderLayout(content) : content}
+            {properties.useBasePageLayout ? (
+                <BasePage
+                    content={content}
+                    menuItems={properties.menuItems}
+                    onLogout={properties.onLogout}
+                    accountLabel={properties.accountLabel}
+                    appTitle={properties.appTitle}
+                    appSubtitle={properties.appSubtitle}
+                    disableDefaultAccountMenu={properties.disableDefaultAccountMenu}
+                />
+            ) : properties.renderLayout ? (
+                properties.renderLayout(content)
+            ) : (
+                content
+            )}
             {properties.detailsModal && properties.detailsModal}
             {properties.addModal && properties.addModal}
         </>

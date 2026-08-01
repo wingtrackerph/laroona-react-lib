@@ -2614,22 +2614,22 @@ const SM = "ddd, MMM Do YYYY, h:mm:ss a", xM = "ddd, MMM Do YYYY", wM = "h:mm:ss
     return "";
   const t = Ke.utc(e).toDate();
   return Ke(t).local().format(jS);
-}, gX = (e) => {
-  if (!e)
-    return "";
-  const t = Ke.utc(e).toDate();
-  return Ke(t).local().format(EM);
 }, pX = (e) => {
   if (!e)
     return "";
   const t = Ke.utc(e).toDate();
+  return Ke(t).local().format(EM);
+}, hX = (e) => {
+  if (!e)
+    return "";
+  const t = Ke.utc(e).toDate();
   return Ke(t).local().format(wM);
-}, hX = (e) => e ? Ke(e).utc().format(Ig) : "", PM = (e) => e ? Ke(e).utc().format(jS) : "", _M = (e) => e ? Ke(e).utc().format(Pg) : "", bX = (e) => e ? Ke(e).local().format(Ig) : "", yX = (e) => e ? Ke(e).local().format(Pg) : "", AS = (e) => e ? e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : "-", MM = (e, t = 6) => {
+}, bX = (e) => e ? Ke(e).utc().format(Ig) : "", PM = (e) => e ? Ke(e).utc().format(jS) : "", _M = (e) => e ? Ke(e).utc().format(Pg) : "", yX = (e) => e ? Ke(e).local().format(Ig) : "", CX = (e) => e ? Ke(e).local().format(Pg) : "", AS = (e) => e ? e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : "-", MM = (e, t = 6) => {
   if (!e)
     return "-";
   const n = Number(e).toFixed(t).toString().split("."), r = AS(Number(n[0])), o = n.length == 2 ? n[1] : 0;
   return r + "." + o;
-}, CX = (e, t) => {
+}, SX = (e, t) => {
   if (t[e + "_degrees"] === "" || t[e + "_minutes"] === "" || t[e + "_seconds"] === "") {
     t[e] = "";
     return;
@@ -2638,7 +2638,7 @@ const SM = "ddd, MMM Do YYYY, h:mm:ss a", xM = "ddd, MMM Do YYYY", wM = "h:mm:ss
   t[e] = parseFloat(
     (parseInt(n) + parseInt(r) / 60 + parseFloat(o) / 3600).toFixed(8)
   );
-}, SX = (e, t) => {
+}, xX = (e, t) => {
   if (!t[e])
     return;
   const n = t[e], r = Math.floor(n), o = Math.floor((n - r) * 60), a = ((n - r - o / 60) * 3600).toFixed(5);
@@ -2945,7 +2945,7 @@ function jM() {
   return Mh || (Mh = 1, process.env.NODE_ENV === "production" ? Xs.exports = TM() : Xs.exports = kM()), Xs.exports;
 }
 var $e = jM();
-const LS = ei({}), xX = ({ children: e }) => {
+const LS = ei({}), wX = ({ children: e }) => {
   const [t, n] = DM("user", null), r = async (l) => {
     n(l);
   }, o = () => {
@@ -5398,23 +5398,23 @@ Tn.getAdapter = sx.getAdapter;
 Tn.HttpStatusCode = Im;
 Tn.default = Tn;
 const {
-  Axios: OX,
-  AxiosError: NX,
-  CanceledError: RX,
-  isCancel: IX,
-  CancelToken: PX,
-  VERSION: _X,
-  all: MX,
-  Cancel: DX,
-  isAxiosError: TX,
-  spread: kX,
-  toFormData: jX,
-  AxiosHeaders: AX,
-  HttpStatusCode: LX,
-  formToJSON: FX,
-  getAdapter: zX,
-  mergeConfig: BX,
-  create: HX
+  Axios: NX,
+  AxiosError: RX,
+  CanceledError: IX,
+  isCancel: PX,
+  CancelToken: _X,
+  VERSION: MX,
+  all: DX,
+  Cancel: TX,
+  isAxiosError: kX,
+  spread: jX,
+  toFormData: AX,
+  AxiosHeaders: LX,
+  HttpStatusCode: FX,
+  formToJSON: zX,
+  getAdapter: BX,
+  mergeConfig: HX,
+  create: VX
 } = Tn, Y2 = window.env.API_BASE_URL;
 let gi;
 const _c = Tn.create({
@@ -5443,7 +5443,7 @@ _c.interceptors.request.use((e) => {
   }
   return e;
 });
-const dx = re.createContext({}), fx = () => re.useContext(dx), VX = ({ children: e }) => {
+const dx = re.createContext({}), fx = () => re.useContext(dx), WX = ({ children: e }) => {
   const [t, n] = re.useState({});
   return /* @__PURE__ */ $e.jsx(
     dx.Provider,
@@ -5457,7 +5457,7 @@ const dx = re.createContext({}), fx = () => re.useContext(dx), VX = ({ children:
   );
 }, mx = re.createContext(
   {}
-), Va = () => re.useContext(mx), WX = ({
+), Va = () => re.useContext(mx), KX = ({
   children: e
 }) => {
   const { logout: t } = qu(), { setNotificationData: n } = fx(), [r, o] = re.useState([]), [a, i] = re.useState([]), l = ($) => {
@@ -5641,7 +5641,7 @@ const dx = re.createContext({}), fx = () => re.useContext(dx), VX = ({ children:
       children: e
     }
   );
-}, vx = re.createContext({}), gx = () => re.useContext(vx), KX = ({ children: e }) => {
+}, vx = re.createContext({}), gx = () => re.useContext(vx), UX = ({ children: e }) => {
   const { clearPostRequest: t } = Va(), [n, r] = re.useState([]), o = (l) => n.indexOf(l) > -1, a = (l) => {
     o(l) || (n.push(l), r(Object.assign([], n)));
   }, i = (l) => {
@@ -5658,7 +5658,7 @@ const dx = re.createContext({}), fx = () => re.useContext(dx), VX = ({ children:
       children: e
     }
   );
-}, UX = (e) => {
+}, YX = (e) => {
   const { authUser: t } = qu();
   if (!t)
     return /* @__PURE__ */ $e.jsx(nf, { to: "/" });
@@ -8891,7 +8891,7 @@ const Gg = fu(od), us = {
   getPrefixCls: ij,
   iconPrefixCls: ad
 }), {
-  Consumer: YX
+  Consumer: qX
 } = xt, Eb = {};
 function Rr(e) {
   const t = s.useContext(xt), {
@@ -52619,7 +52619,7 @@ const uX = (e) => {
       }
     }
   );
-}, qX = (e) => {
+}, dX = (e) => {
   const t = Ju(), [n, r] = sN.useNotification(), [o, a] = Yt(() => typeof window > "u" ? !1 : window.innerWidth < 992), [i, l] = Yt([]), {
     token: { colorBgContainer: c, borderRadiusLG: u }
   } = tG.useToken(), d = BC(), { authUser: f, logout: m } = qu(), { submitPostRequest: g, clearRequests: p } = Va(), { notificationData: b } = fx(), v = CR();
@@ -53019,7 +53019,7 @@ const uX = (e) => {
       width: e.width
     }
   );
-}, dX = (e) => {
+}, fX = (e) => {
   const { Search: t } = Ko;
   return /* @__PURE__ */ $e.jsxs(Mu, { align: "center", wrap: "wrap", gap: 12, children: [
     e.hasActionBack && /* @__PURE__ */ $e.jsx(qn, { title: "Back", children: /* @__PURE__ */ $e.jsx(
@@ -53134,7 +53134,7 @@ const uX = (e) => {
     e.onSearch && e.onSearch(S);
   }, y = /* @__PURE__ */ $e.jsxs($e.Fragment, { children: [
     /* @__PURE__ */ $e.jsx(
-      dX,
+      fX,
       {
         title: e.title,
         hasActionAdd: e.hasActionAdd != null ? e.hasActionAdd : !0,
@@ -53187,7 +53187,18 @@ const uX = (e) => {
     )
   ] });
   return /* @__PURE__ */ $e.jsxs($e.Fragment, { children: [
-    e.renderLayout ? e.renderLayout(y) : y,
+    e.useBasePageLayout ? /* @__PURE__ */ $e.jsx(
+      dX,
+      {
+        content: y,
+        menuItems: e.menuItems,
+        onLogout: e.onLogout,
+        accountLabel: e.accountLabel,
+        appTitle: e.appTitle,
+        appSubtitle: e.appSubtitle,
+        disableDefaultAccountMenu: e.disableDefaultAccountMenu
+      }
+    ) : e.renderLayout ? e.renderLayout(y) : y,
     e.detailsModal && e.detailsModal,
     e.addModal && e.addModal
   ] });
@@ -53488,22 +53499,22 @@ export {
   XG as AppInput,
   QG as AppModal,
   uX as AppTable,
-  xX as AuthProvider,
-  qX as BasePage,
+  wX as AuthProvider,
+  dX as BasePage,
   GX as DataInput,
   XX as Icon,
   QX as ModalData,
-  KX as ModalProvider,
-  VX as NotificationProvider,
+  UX as ModalProvider,
+  WX as NotificationProvider,
   JX as Overview,
-  dX as PageHeader,
-  UX as ProtectedRoute,
+  fX as PageHeader,
+  YX as ProtectedRoute,
   ZX as QuickActionCard,
-  WX as RequestProvider,
+  KX as RequestProvider,
   eQ as ResponsiveTable,
   tQ as TabBar,
-  CX as convertDMStoDecimal,
-  SX as convertDecimaltoDMS,
+  SX as convertDMStoDecimal,
+  xX as convertDecimaltoDMS,
   xM as defaultDateFormat,
   SM as defaultDateTimeFormat,
   wM as defaultTimeFormat,
@@ -53513,13 +53524,13 @@ export {
   RM as formatIsoDate,
   NM as formatIsoDateTime,
   IM as formatIsoDateTimeMilli,
-  gX as formatIsoTime,
-  yX as formatLocalIsoDate,
-  bX as formatLocalIsoDateTime,
+  pX as formatIsoTime,
+  CX as formatLocalIsoDate,
+  yX as formatLocalIsoDateTime,
   AS as formatNumber,
-  pX as formatTime,
+  hX as formatTime,
   _M as formatUtcIsoDate,
-  hX as formatUtcIsoDateTime,
+  bX as formatUtcIsoDateTime,
   PM as formatUtcIsoDateTimeMilli,
   Pg as isoDateFormat,
   Ig as isoDateTimeFormat,
