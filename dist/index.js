@@ -53106,33 +53106,33 @@ const uX = (e) => {
     )
   ] });
 }, JX = (e) => {
-  const { getRequest: t, getPostRequest: n, fetchRequest: r, notifyPostRequests: o } = Va(), { openModal: a, closeModal: i } = gx(), { authUser: l } = qu(), c = BC(), u = re.useRef(!1), [d, f] = re.useState(null), { fetchRequests: m, filterRequestData: g } = Va();
+  const { getRequest: t, getPostRequest: n, fetchRequest: r, notifyPostRequests: o } = Va(), { openModal: a, closeModal: i } = gx(), { authUser: l } = qu(), c = BC(), [u, d] = re.useState(null), { fetchRequests: f, filterRequestData: m } = Va();
   Qt(() => {
-    var S;
-    u.current || !l || !((S = e.requests) != null && S.length) || (u.current = !0, m(e.requests, !1));
-  }, [l]);
-  const p = t(e.tableRequestKey), b = p.isPaginated;
-  b && !d && f(b);
-  const v = (S = null) => {
-    S || (S = {
+    var y;
+    !l || !((y = e.requests) != null && y.length) || f(e.requests, !1);
+  }, [l, e.requests, f]);
+  const g = t(e.tableRequestKey), p = g.isPaginated;
+  p && !u && d(p);
+  const b = (y = null) => {
+    y || (y = {
       id: 0
-    }), e.addModalId && e.addModalId !== e.detailsModalId && i(e.addModalId), e.onShowDetailsModal && e.onShowDetailsModal(S);
-    const x = n(e.detailsModalId);
-    x.errors = null, x.errorMessage = null, x.postData = structuredClone(S), o(), a(e.detailsModalId);
-  }, h = () => {
-    const S = e.addModalId || e.detailsModalId, x = {
+    }), e.addModalId && e.addModalId !== e.detailsModalId && i(e.addModalId), e.onShowDetailsModal && e.onShowDetailsModal(y);
+    const S = n(e.detailsModalId);
+    S.errors = null, S.errorMessage = null, S.postData = structuredClone(y), o(), a(e.detailsModalId);
+  }, v = () => {
+    const y = e.addModalId || e.detailsModalId, S = {
       id: 0
     };
-    e.addModalId && e.addModalId !== e.detailsModalId && i(e.detailsModalId), e.onShowDetailsModal && e.onShowDetailsModal(x);
-    const E = n(S);
-    E.errors = null, E.errorMessage = null, E.postData = structuredClone(x), o(), a(S);
-  }, C = (S) => {
-    if (S.length >= 2 || S.length == 0) {
-      const x = t(e.tableRequestKey);
-      x.queryText = S, r(x);
+    e.addModalId && e.addModalId !== e.detailsModalId && i(e.detailsModalId), e.onShowDetailsModal && e.onShowDetailsModal(S);
+    const x = n(y);
+    x.errors = null, x.errorMessage = null, x.postData = structuredClone(S), o(), a(y);
+  }, h = (y) => {
+    if (y.length >= 2 || y.length == 0) {
+      const S = t(e.tableRequestKey);
+      S.queryText = y, r(S);
     }
-    e.onSearch && e.onSearch(S);
-  }, y = /* @__PURE__ */ $e.jsxs($e.Fragment, { children: [
+    e.onSearch && e.onSearch(y);
+  }, C = /* @__PURE__ */ $e.jsxs($e.Fragment, { children: [
     /* @__PURE__ */ $e.jsx(
       dX,
       {
@@ -53146,18 +53146,18 @@ const uX = (e) => {
         secondaryDownloadText: e.secondaryDownloadText,
         isDownloading: e.isDownloading,
         isSecondaryDownloading: e.isSecondaryDownloading,
-        onAddClick: () => h(),
+        onAddClick: () => v(),
         onBackClick: () => c(-1),
         onDownloadClick: e.onDownloadClick,
         onSecondaryDownloadClick: e.onSecondaryDownloadClick,
-        onSearch: (S) => {
-          if (d && !e.searchTableOnly) {
-            C(S);
+        onSearch: (y) => {
+          if (u && !e.searchTableOnly) {
+            h(y);
             return;
           }
-          g(
+          m(
             e.tableRequestKey,
-            S,
+            y,
             e.keysToSearch
           );
         }
@@ -53169,15 +53169,15 @@ const uX = (e) => {
       {
         headers: e.tableHeaders,
         columns: e.tableColumns,
-        data: p.data,
+        data: g.data,
         requestKey: e.tableRequestKey,
         pageSize: e.tablePageSize,
         customActionIcon: e.customActionIcon,
         customActionTooltip: e.customActionTooltip,
         marginTop: e.tableMarginTop,
         headerHeight: e.headerHeight,
-        onRowEditClick: (S) => {
-          v(S);
+        onRowEditClick: (y) => {
+          b(y);
         },
         onRenderRowColor: e.onRenderRowColor,
         onRowClick: e.onRowClick,
@@ -53187,7 +53187,7 @@ const uX = (e) => {
     )
   ] });
   return /* @__PURE__ */ $e.jsxs($e.Fragment, { children: [
-    e.renderLayout ? e.renderLayout(y) : y,
+    e.renderLayout ? e.renderLayout(C) : C,
     e.detailsModal && e.detailsModal,
     e.addModal && e.addModal
   ] });
