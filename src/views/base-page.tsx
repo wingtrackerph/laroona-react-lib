@@ -31,9 +31,12 @@ interface BasePageProperties {
     menuItems?: BasePageMenuItem[];
     onLogout?: () => void;
     accountLabel?: string;
+    appTitleLogo?: React.ReactNode;
     appTitle?: string;
     appSubtitle?: string;
     disableDefaultAccountMenu?: boolean;
+    siderBackground?: string;
+    siderHeaderBackground?: string;
 }
 
 const BasePage = (properties: BasePageProperties) => {
@@ -212,8 +215,7 @@ const BasePage = (properties: BasePageProperties) => {
                     collapsed={collapsed}
                     breakpoint="lg"
                     style={{
-                        background:
-                            "linear-gradient(120deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
+                        background: properties.siderBackground,
                         height: "100vh",
                         zIndex: 2,
                         overflow: "auto",
@@ -227,16 +229,15 @@ const BasePage = (properties: BasePageProperties) => {
                         style={{
                             padding: isMobile ? "12px 8px" : "20px 16px",
                             borderBottom: "1px solid rgba(255,255,255,0.15)",
-                            background:
-                                "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+                            background: properties.siderHeaderBackground,
                             display: "flex",
                             alignItems: "center",
                             gap: 10,
                         }}
                     >
-                        <QrcodeOutlined
-                            style={{ fontSize: 26, color: "#52c41a", flexShrink: 0 }}
-                        />
+                        {properties.appTitleLogo ?? (
+                           properties.appTitleLogo
+                        )}
                         {!collapsed && (
                             <Typography.Text
                                 style={{

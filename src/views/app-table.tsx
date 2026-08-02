@@ -11,6 +11,7 @@ import {
     Table,
     Tooltip,
     Typography,
+    theme,
 } from "antd";
 import { DeleteOutlined, EditOutlined, RightOutlined } from "@ant-design/icons";
 import {
@@ -50,6 +51,9 @@ const AppTable = (properties: Properties) => {
 
     const { Text } = Typography;
     const isMobile = useIsMobile();
+    const {
+        token: { colorPrimary },
+    } = theme.useToken();
 
     const { getRequest, fetchRequest } = useRequestContext();
 
@@ -351,7 +355,7 @@ const AppTable = (properties: Properties) => {
                 {cardData.map((field, idx) => (
                     <Row key={idx} style={{ marginBottom: 8 }}>
                         <Col span={10}>
-                            <Text strong style={{ color: "#52c41a" }}>
+                            <Text strong style={{ color: colorPrimary }}>
                                 {field.label}:
                             </Text>
                         </Col>
@@ -469,7 +473,7 @@ const AppTable = (properties: Properties) => {
                         <tr
                             {...props}
                             style={{
-                                background: "#52c41a",
+                                background: colorPrimary,
                                 borderRadius: "8px 8px 0 0",
                                 padding: "12px 16px",
                             }}
@@ -479,7 +483,7 @@ const AppTable = (properties: Properties) => {
                         <th
                             {...props}
                             style={{
-                                background: "#52c41a",
+                                background: colorPrimary,
                                 borderBottom:
                                     "1px solid rgba(255, 255, 255, 0.2)",
                                 padding: "12px 16px",

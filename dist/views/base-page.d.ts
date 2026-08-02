@@ -7,9 +7,12 @@ interface BasePageProperties {
     menuItems?: BasePageMenuItem[];
     onLogout?: () => void;
     accountLabel?: string;
+    appTitleLogo?: React.ReactNode;
     appTitle?: string;
     appSubtitle?: string;
     disableDefaultAccountMenu?: boolean;
+    siderBackground?: string;
+    siderHeaderBackground?: string;
 }
 declare const BasePage: (properties: BasePageProperties) => React.JSX.Element;
 export default BasePage;
