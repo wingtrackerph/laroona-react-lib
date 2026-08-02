@@ -37,6 +37,7 @@ interface BasePageProperties {
     disableDefaultAccountMenu?: boolean;
     siderBackground?: string;
     siderHeaderBackground?: string;
+    isSiderDark: boolean;
 }
 
 const BasePage = (properties: BasePageProperties) => {
@@ -241,7 +242,7 @@ const BasePage = (properties: BasePageProperties) => {
                         {!collapsed && (
                             <Typography.Text
                                 style={{
-                                    color: "#fff",
+                                    color: properties.isSiderDark ? "#fff" : "#000",
                                     fontWeight: 800,
                                     fontSize: 18,
                                     letterSpacing: 1,
@@ -265,7 +266,7 @@ const BasePage = (properties: BasePageProperties) => {
                                 width: isMobile ? 30 : 40,
                                 height: isMobile ? 30 : 40,
                                 marginLeft: "auto",
-                                color: "#fff",
+                                color: properties.isSiderDark ? "#fff" : "#000",
                                 borderRadius: "10px",
                                 backgroundColor: "rgba(255,255,255,0.15)",
                                 border: "1px solid rgba(255,255,255,0.2)",
@@ -285,7 +286,7 @@ const BasePage = (properties: BasePageProperties) => {
                                 backgroundColor: "transparent",
                                 border: "none",
                                 fontSize: "15px",
-                                color: "#fff",
+                                color: properties.isSiderDark ? "#fff" : "#000",
                                 padding: 0,
                                 margin: 0,
                             }}
@@ -318,7 +319,7 @@ const BasePage = (properties: BasePageProperties) => {
                         >
                             <Typography.Text
                                 style={{
-                                    color: "#fff",
+                                    color: properties.isSiderDark ? "#fff" : "#000",
                                     fontSize: "13px",
                                     fontWeight: 700,
                                     display: "block",
@@ -329,7 +330,7 @@ const BasePage = (properties: BasePageProperties) => {
                             {!collapsed && (
                                 <Typography.Text
                                     style={{
-                                        color: "#e0e7ff",
+                                        color: properties.isSiderDark ? "#e0e7ff" : "#000",
                                         fontSize: "11px",
                                         display: "block",
                                     }}

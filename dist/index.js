@@ -11770,7 +11770,7 @@ const D_ = ps({
                     ta.Text,
                     {
                       style: {
-                        color: "#fff",
+                        color: e.isSiderDark ? "#fff" : "#000",
                         fontWeight: 800,
                         fontSize: 18,
                         letterSpacing: 1
@@ -11789,7 +11789,7 @@ const D_ = ps({
                         width: t ? 30 : 40,
                         height: t ? 30 : 40,
                         marginLeft: "auto",
-                        color: "#fff",
+                        color: e.isSiderDark ? "#fff" : "#000",
                         borderRadius: "10px",
                         backgroundColor: "rgba(255,255,255,0.15)",
                         border: "1px solid rgba(255,255,255,0.2)"
@@ -11813,7 +11813,7 @@ const D_ = ps({
                       backgroundColor: "transparent",
                       border: "none",
                       fontSize: "15px",
-                      color: "#fff",
+                      color: e.isSiderDark ? "#fff" : "#000",
                       padding: 0,
                       margin: 0
                     },
@@ -11851,7 +11851,7 @@ const D_ = ps({
                         ta.Text,
                         {
                           style: {
-                            color: "#fff",
+                            color: e.isSiderDark ? "#fff" : "#000",
                             fontSize: "13px",
                             fontWeight: 700,
                             display: "block"
@@ -11863,7 +11863,7 @@ const D_ = ps({
                         ta.Text,
                         {
                           style: {
-                            color: "#e0e7ff",
+                            color: e.isSiderDark ? "#e0e7ff" : "#000",
                             fontSize: "11px",
                             display: "block"
                           },
