@@ -2,7 +2,7 @@ import * as g from "react";
 import q, { useState as Yn, createContext as Gi, useMemo as ba, useContext as Qt, useEffect as bt, isValidElement as Gf, version as Kv, useRef as Ae, useLayoutEffect as Xv, forwardRef as wa, useImperativeHandle as Rc, cloneElement as Zv } from "react";
 import { Navigate as Ns, useNavigate as Kf, useLocation as Jv } from "react-router-dom";
 import { Input as di, DatePicker as Qv, TimePicker as Au, Select as ep, InputNumber as tp, Checkbox as np, Switch as rp, Form as Xf, Modal as ap, Button as lt, Typography as ta, theme as Zf, Spin as op, Pagination as ip, Table as Jf, Card as Tc, Row as Oi, Col as na, Space as Ja, Tooltip as Rn, notification as sp, Layout as Fu, Menu as lp, Flex as bl, Radio as cp } from "antd";
-import { DeleteOutlined as Ri, RightOutlined as Ti, EditOutlined as Pi, MenuUnfoldOutlined as up, MenuFoldOutlined as dp, LogoutOutlined as fp, UserOutlined as hp, ArrowLeftOutlined as mp, PlusOutlined as gp, DownloadOutlined as ju } from "@ant-design/icons";
+import { DeleteOutlined as Ri, RightOutlined as Ti, EditOutlined as Pi, LogoutOutlined as up, UserOutlined as dp, MenuUnfoldOutlined as fp, MenuFoldOutlined as hp, ArrowLeftOutlined as mp, PlusOutlined as gp, DownloadOutlined as ju } from "@ant-design/icons";
 import Iu, { createPortal as vp } from "react-dom";
 //! moment.js
 //! version : 2.30.1
@@ -11647,14 +11647,14 @@ const D_ = ps({
   const t = us(), [n, r] = sp.useNotification(), [a, o] = Yn(() => typeof window > "u" ? !1 : window.innerWidth < 992), [i, s] = Yn([]), {
     token: { colorBgContainer: l, borderRadiusLG: c }
   } = Zf.useToken(), u = Kf(), { authUser: d, logout: f } = is(), { submitPostRequest: p, clearRequests: b } = Pr(), { notificationData: y } = wm(), h = Jv();
-  function m(O, _, M, N, j, P) {
+  function m(O, _, M, N, j) {
     return {
       key: O,
       icon: M,
       children: N,
       label: _,
-      style: j,
-      onClick: P
+      style: e.isSiderLight ? { color: "#000" } : {},
+      onClick: j
     };
   }
   const v = () => {
@@ -11679,13 +11679,12 @@ const D_ = ps({
       m(
         "account-group",
         e.accountLabel ?? (d == null ? void 0 : d.full_name) ?? "Account",
-        /* @__PURE__ */ H.jsx(hp, {}),
+        /* @__PURE__ */ H.jsx(dp, {}),
         [
           m(
             "logout",
             "Logout",
-            /* @__PURE__ */ H.jsx(fp, {}),
-            void 0,
+            /* @__PURE__ */ H.jsx(up, {}),
             void 0,
             () => v()
           )
@@ -11782,7 +11781,7 @@ const D_ = ps({
                     lt,
                     {
                       type: "text",
-                      icon: a ? /* @__PURE__ */ H.jsx(up, {}) : /* @__PURE__ */ H.jsx(dp, {}),
+                      icon: a ? /* @__PURE__ */ H.jsx(fp, {}) : /* @__PURE__ */ H.jsx(hp, {}),
                       onClick: () => o(!a),
                       style: {
                         fontSize: "16px",

@@ -66,7 +66,6 @@ const BasePage = (properties: BasePageProperties) => {
         label: React.ReactNode,
         icon?: React.ReactNode,
         children?: BasePageMenuItem[],
-        style?: any,
         onClick?: () => void,
     ): BasePageMenuItem {
         return {
@@ -74,7 +73,7 @@ const BasePage = (properties: BasePageProperties) => {
             icon,
             children,
             label,
-            style,
+            style: properties.isSiderLight ? { color: "#000" } : {},
             onClick,
         } as BasePageMenuItem;
     }
@@ -119,7 +118,6 @@ const BasePage = (properties: BasePageProperties) => {
                             "logout",
                             "Logout",
                             <LogoutOutlined />,
-                            undefined,
                             undefined,
                             () => handleLogout(),
                         ),
