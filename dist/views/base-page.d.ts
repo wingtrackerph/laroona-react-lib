@@ -13,7 +13,7 @@ interface BasePageProperties {
     disableDefaultAccountMenu?: boolean;
     siderBackground?: string;
     siderHeaderBackground?: string;
-    isSiderDark: boolean;
+    isSiderLight?: boolean;
 }
 declare const BasePage: (properties: BasePageProperties) => React.JSX.Element;
 export default BasePage;

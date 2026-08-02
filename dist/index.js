@@ -11770,7 +11770,7 @@ const D_ = ps({
                     ta.Text,
                     {
                       style: {
-                        color: e.isSiderDark ? "#fff" : "#000",
+                        color: e.isSiderLight ? "#000" : "#fff",
                         fontWeight: 800,
                         fontSize: 18,
                         letterSpacing: 1
@@ -11789,7 +11789,7 @@ const D_ = ps({
                         width: t ? 30 : 40,
                         height: t ? 30 : 40,
                         marginLeft: "auto",
-                        color: e.isSiderDark ? "#fff" : "#000",
+                        color: e.isSiderLight ? "#000" : "#fff",
                         borderRadius: "10px",
                         backgroundColor: "rgba(255,255,255,0.15)",
                         border: "1px solid rgba(255,255,255,0.2)"
@@ -11813,7 +11813,7 @@ const D_ = ps({
                       backgroundColor: "transparent",
                       border: "none",
                       fontSize: "15px",
-                      color: e.isSiderDark ? "#fff" : "#000",
+                      color: e.isSiderLight ? "#000" : "#fff",
                       padding: 0,
                       margin: 0
                     },
@@ -11851,7 +11851,7 @@ const D_ = ps({
                         ta.Text,
                         {
                           style: {
-                            color: e.isSiderDark ? "#fff" : "#000",
+                            color: e.isSiderLight ? "#000" : "#fff",
                             fontSize: "13px",
                             fontWeight: 700,
                             display: "block"
@@ -11863,7 +11863,7 @@ const D_ = ps({
                         ta.Text,
                         {
                           style: {
-                            color: e.isSiderDark ? "#e0e7ff" : "#000",
+                            color: e.isSiderLight ? "#000" : "#e0e7ff",
                             fontSize: "11px",
                             display: "block"
                           },
