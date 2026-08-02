@@ -2,7 +2,7 @@ import * as g from "react";
 import q, { useState as Yn, createContext as Gi, useMemo as ba, useContext as Qt, useEffect as bt, isValidElement as Gf, version as Kv, useRef as Ae, useLayoutEffect as Xv, forwardRef as wa, useImperativeHandle as Rc, cloneElement as Zv } from "react";
 import { Navigate as Ns, useNavigate as Kf, useLocation as Jv } from "react-router-dom";
 import { Input as di, DatePicker as Qv, TimePicker as Au, Select as ep, InputNumber as tp, Checkbox as np, Switch as rp, Form as Xf, Modal as ap, Button as lt, Typography as ta, theme as Zf, Spin as op, Pagination as ip, Table as Jf, Card as Tc, Row as Oi, Col as na, Space as Ja, Tooltip as Rn, notification as sp, Layout as Fu, Menu as lp, Flex as bl, Radio as cp } from "antd";
-import { DeleteOutlined as Ri, RightOutlined as Ti, EditOutlined as Pi, LogoutOutlined as up, UserOutlined as dp, MenuUnfoldOutlined as fp, MenuFoldOutlined as hp, ArrowLeftOutlined as mp, PlusOutlined as gp, DownloadOutlined as ju } from "@ant-design/icons";
+import { DeleteOutlined as Ri, RightOutlined as Ti, EditOutlined as Pi, MenuUnfoldOutlined as up, MenuFoldOutlined as dp, LogoutOutlined as fp, UserOutlined as hp, ArrowLeftOutlined as mp, PlusOutlined as gp, DownloadOutlined as ju } from "@ant-design/icons";
 import Iu, { createPortal as vp } from "react-dom";
 //! moment.js
 //! version : 2.30.1
@@ -11653,7 +11653,6 @@ const D_ = ps({
       icon: M,
       children: N,
       label: _,
-      style: e.isSiderLight ? { color: "#000" } : {},
       onClick: j
     };
   }
@@ -11679,12 +11678,12 @@ const D_ = ps({
       m(
         "account-group",
         e.accountLabel ?? (d == null ? void 0 : d.full_name) ?? "Account",
-        /* @__PURE__ */ H.jsx(dp, {}),
+        /* @__PURE__ */ H.jsx(hp, {}),
         [
           m(
             "logout",
             "Logout",
-            /* @__PURE__ */ H.jsx(up, {}),
+            /* @__PURE__ */ H.jsx(fp, {}),
             void 0,
             () => v()
           )
@@ -11781,7 +11780,7 @@ const D_ = ps({
                     lt,
                     {
                       type: "text",
-                      icon: a ? /* @__PURE__ */ H.jsx(fp, {}) : /* @__PURE__ */ H.jsx(hp, {}),
+                      icon: a ? /* @__PURE__ */ H.jsx(up, {}) : /* @__PURE__ */ H.jsx(dp, {}),
                       onClick: () => o(!a),
                       style: {
                         fontSize: "16px",
@@ -11812,11 +11811,10 @@ const D_ = ps({
                       backgroundColor: "transparent",
                       border: "none",
                       fontSize: "15px",
-                      color: e.isSiderLight ? "#000" : "#fff",
                       padding: 0,
                       margin: 0
                     },
-                    theme: "dark",
+                    theme: e.isSiderLight ? "light" : "dark",
                     mode: "inline",
                     selectedKeys: [h.pathname],
                     openKeys: i,

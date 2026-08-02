@@ -73,7 +73,6 @@ const BasePage = (properties: BasePageProperties) => {
             icon,
             children,
             label,
-            style: properties.isSiderLight ? { color: "#000" } : {},
             onClick,
         } as BasePageMenuItem;
     }
@@ -284,11 +283,10 @@ const BasePage = (properties: BasePageProperties) => {
                                 backgroundColor: "transparent",
                                 border: "none",
                                 fontSize: "15px",
-                                color: properties.isSiderLight ? "#000" : "#fff",
                                 padding: 0,
                                 margin: 0,
                             }}
-                            theme="dark"
+                            theme={properties.isSiderLight ? "light" : "dark"}
                             mode="inline"
                             selectedKeys={[location.pathname]}
                             openKeys={openKeys}
