@@ -18,7 +18,14 @@ export default defineConfig({
             formats: ["es"],
         },
         rollupOptions: {
-            external: ["react", "react-dom", "react-router", "react-router-dom", "antd"],
+            external: [
+                "react",
+                "react-dom",
+                "react-router",
+                "react-router-dom",
+                "antd",
+                "@ant-design/icons",
+            ],
         },
     },
 });
