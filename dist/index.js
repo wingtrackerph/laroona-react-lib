@@ -20021,7 +20021,7 @@ const Yf = [1, 2, 3, 4, 5], aM = /* @__PURE__ */ g.forwardRef((e, t) => {
       x.queryText = w, r(x);
     }
     e.onSearch && e.onSearch(w);
-  }, v = /* @__PURE__ */ H.jsxs(H.Fragment, { children: [
+  }, v = /* @__PURE__ */ H.jsxs("div", { style: { display: "flex", flexDirection: "column", height: "100%" }, children: [
     /* @__PURE__ */ H.jsx(
       oM,
       {
