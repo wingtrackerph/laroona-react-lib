@@ -11733,7 +11733,7 @@ const D_ = ps({
     }), y.show_notification = !1);
   }, [y]), /* @__PURE__ */ H.jsxs(H.Fragment, { children: [
     r,
-    /* @__PURE__ */ H.jsxs(Fu, { children: [
+    /* @__PURE__ */ H.jsxs(Fu, { style: { display: "flex", flexDirection: "row" }, children: [
       /* @__PURE__ */ H.jsxs(
         Eu,
         {
@@ -20021,7 +20021,7 @@ const Yf = [1, 2, 3, 4, 5], aM = /* @__PURE__ */ g.forwardRef((e, t) => {
       x.queryText = w, r(x);
     }
     e.onSearch && e.onSearch(w);
-  }, v = /* @__PURE__ */ H.jsxs("div", { style: { display: "flex", flexDirection: "column", height: "100%" }, children: [
+  }, v = /* @__PURE__ */ H.jsxs(H.Fragment, { children: [
     /* @__PURE__ */ H.jsx(
       oM,
       {

@@ -138,7 +138,7 @@ const Overview = (properties: Properties) => {
     };
 
     const content = (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <>
             <PageHeader
                 title={properties.title}
                 hasActionAdd={
@@ -206,7 +206,7 @@ const Overview = (properties: Properties) => {
                 onRowCustomClick={properties.onRowCustomClick}
                 onRowDeleteClick={properties.onRowDeleteClick}
             />
-        </div>
+        </>
     );
 
     return (

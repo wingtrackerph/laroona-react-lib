@@ -206,7 +206,7 @@ const BasePage = (properties: BasePageProperties) => {
     return (
         <>
             {contextHolder}
-            <Layout>
+            <Layout style={{ display: 'flex', flexDirection: 'row' }}>
                 <Sider
                     width={isMobile ? "180px" : "280px"}
                     collapsedWidth={isMobile ? 40 : 50}
