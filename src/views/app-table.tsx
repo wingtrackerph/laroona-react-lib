@@ -22,7 +22,7 @@ import {
     formatIsoDateTime,
     formatIsoDateTimeMilli,
     formatNumber,
-} from "../helpers/format-helpers";
+} from "../helpers/format-helper";
 import { TablePaginationConfig } from "antd/es/table";
 import { useIsMobile } from "../hooks/use-is-mobile";
 
@@ -459,8 +459,8 @@ const AppTable = (properties: Properties) => {
             scroll={{ y: `calc(100vh - ${properties.headerHeight || 340}px)` }}
             style={{
                 borderRadius: "12px",
-                boxShadow: "0 4px 12px rgba(82, 196, 26, 0.08)",
-                border: "1px solid rgba(82, 196, 26, 0.06)",
+                boxShadow: `0 4px 12px ${colorPrimary}14`,
+                border: `1px solid ${colorPrimary}0F`,
                 marginTop: properties.marginTop || 10,
             }}
             className="custom-table-header"

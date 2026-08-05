@@ -1,5 +1,5 @@
 // Helpers
-export * from "./helpers/format-helpers";
+export * from "./helpers/format-helper";
 export * from "./helpers/local-storage";
 
 // Contexts

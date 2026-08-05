@@ -1,4 +1,4 @@
-export * from './helpers/format-helpers';
+export * from './helpers/format-helper';
 export * from './helpers/local-storage';
 export * from './contexts/auth-context';
 export * from './contexts/modal-context';

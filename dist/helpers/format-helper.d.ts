@@ -21,4 +21,4 @@ export declare const formatNumber: (number: number) => string;
 export declare const formatDecimal: (decimal: string, decimalPlace?: number) => string;
 export declare const convertDMStoDecimal: (key: string, data: any) => void;
 export declare const convertDecimaltoDMS: (key: string, data: any) => void;
-//# sourceMappingURL=format-helpers.d.ts.map
+//# sourceMappingURL=format-helper.d.ts.map

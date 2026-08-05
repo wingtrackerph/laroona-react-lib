@@ -6482,8 +6482,8 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
       scroll: { y: `calc(100vh - ${e.headerHeight || 340}px)` },
       style: {
         borderRadius: "12px",
-        boxShadow: "0 4px 12px rgba(82, 196, 26, 0.08)",
-        border: "1px solid rgba(82, 196, 26, 0.06)",
+        boxShadow: `0 4px 12px ${o}14`,
+        border: `1px solid ${o}0F`,
         marginTop: e.marginTop || 10
       },
       className: "custom-table-header",
