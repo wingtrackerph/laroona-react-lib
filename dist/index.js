@@ -6037,7 +6037,7 @@ const Ko = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
         }
       );
     else if (e.type == "time")
-      o = /* @__PURE__ */ H.jsx(
+      console.log("properties.value", e.value), o = /* @__PURE__ */ H.jsx(
         Au,
         {
           ref: t,
@@ -6047,6 +6047,7 @@ const Ko = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
+            console.log("timeString", s);
             let l = typeof s == "string" ? s : Array.isArray(s) ? s[0] : "";
             e.onChange(l || "");
           }
