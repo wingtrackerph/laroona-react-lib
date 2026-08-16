@@ -128,7 +128,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                 <DatePicker
                     ref={ref}
                     name={properties.name}
-                    value={properties.value && dayjs(properties.value).isValid?.() ? dayjs(properties.value) : null}
+                    value={properties.value ? dayjs(properties.value) : null}
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
                     minDate={properties.disablePastDates ? dayjs() : undefined}
@@ -150,9 +150,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     name={properties.name}
                     defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
                     value={
-                        properties.value && dayjs(properties.value, "HH:mm:ss").isValid?.()
-                            ? dayjs(properties.value, "HH:mm:ss")
-                            : null
+                        properties.value ? dayjs(properties.value, "HH:mm:ss") : null
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
@@ -174,9 +172,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     format="HH:mm:ss.SSS"
                     defaultOpenValue={dayjs("00:00:00.000", "HH:mm:ss.SSS")}
                     value={
-                        properties.value && dayjs(properties.value, "HH:mm:ss.SSS").isValid?.()
-                            ? dayjs(properties.value, "HH:mm:ss.SSS")
-                            : null
+                        properties.value ? dayjs(properties.value, "HH:mm:ss.SSS") : null
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
