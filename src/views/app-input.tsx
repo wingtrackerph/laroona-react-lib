@@ -147,6 +147,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                 <TimePicker
                     ref={ref}
                     name={properties.name}
+                    format="HH:mm:ss"
                     value={
                         properties.value ? dayjs(properties.value, "HH:mm:ss") : null
                     }
