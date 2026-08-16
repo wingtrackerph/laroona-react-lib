@@ -12,6 +12,7 @@ interface QuickActionCardProps {
     color: string;
     gradientFrom: string;
     gradientTo: string;
+    descriptionColor?: string;
 }
 
 const QuickActionCard: React.FC<QuickActionCardProps> = ({
@@ -22,6 +23,7 @@ const QuickActionCard: React.FC<QuickActionCardProps> = ({
     color,
     gradientFrom,
     gradientTo,
+    descriptionColor = "#8c8c8c",
 }) => {
     return (
         <Card
@@ -62,7 +64,7 @@ const QuickActionCard: React.FC<QuickActionCardProps> = ({
                 <Text
                     style={{
                         fontSize: "12px",
-                        color: "#8c8c8c",
+                        color: descriptionColor,
                     }}
                 >
                     {description}

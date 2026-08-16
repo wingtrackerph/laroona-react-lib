@@ -7,6 +7,7 @@ interface QuickActionCardProps {
     color: string;
     gradientFrom: string;
     gradientTo: string;
+    descriptionColor?: string;
 }
 declare const QuickActionCard: React.FC<QuickActionCardProps>;
 export default QuickActionCard;

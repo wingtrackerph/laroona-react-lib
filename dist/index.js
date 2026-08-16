@@ -6026,7 +6026,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
         {
           ref: t,
           name: e.name,
-          value: e.value && Br(e.value),
+          value: e.value ? Br(e.value) : null,
           disabled: e.disabled,
           onKeyDown: n,
           minDate: e.disablePastDates ? Br() : void 0,
@@ -6043,7 +6043,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           ref: t,
           name: e.name,
           defaultOpenValue: Br("00:00:00", "HH:mm:ss"),
-          value: e.value && Br(e.value, "HH:mm:ss"),
+          value: e.value ? Br(e.value, "HH:mm:ss") : null,
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
@@ -6060,7 +6060,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           name: e.name,
           format: "HH:mm:ss.SSS",
           defaultOpenValue: Br("00:00:00.000", "HH:mm:ss.SSS"),
-          value: e.value && Br(e.value, "HH:mm:ss.SSS"),
+          value: e.value ? Br(e.value, "HH:mm:ss.SSS") : null,
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
@@ -20084,7 +20084,8 @@ const Yf = [1, 2, 3, 4, 5], aM = /* @__PURE__ */ g.forwardRef((e, t) => {
   onClick: r,
   color: a,
   gradientFrom: o,
-  gradientTo: i
+  gradientTo: i,
+  descriptionColor: s = "#8c8c8c"
 }) => /* @__PURE__ */ H.jsx(
   Tc,
   {
@@ -20132,7 +20133,7 @@ const Yf = [1, 2, 3, 4, 5], aM = /* @__PURE__ */ g.forwardRef((e, t) => {
             {
               style: {
                 fontSize: "12px",
-                color: "#8c8c8c"
+                color: s
               },
               children: n
             }
