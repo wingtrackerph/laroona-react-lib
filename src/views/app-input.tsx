@@ -143,7 +143,6 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                 />
             );
         } else if (properties.type == "time") {
-            console.log("properties.value", properties.value);
             input = (
                 <TimePicker
                     ref={ref}
@@ -159,7 +158,6 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
                     onChange={(time, timeString) => {
-                        console.log("timeString", timeString);
                         let value = typeof timeString === "string" 
                             ? timeString 
                             : Array.isArray(timeString) 

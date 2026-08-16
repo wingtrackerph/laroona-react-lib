@@ -6037,11 +6037,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
         }
       );
     else if (e.type == "time")
-<<<<<<< HEAD
       o = /* @__PURE__ */ z.jsx(
-=======
-      console.log("properties.value", e.value), o = /* @__PURE__ */ H.jsx(
->>>>>>> 7bd71e45b0477b05375e4a53fef73e3477698f23
         Au,
         {
           ref: t,
@@ -6051,7 +6047,6 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
-            console.log("timeString", s);
             let l = typeof s == "string" ? s : Array.isArray(s) ? s[0] : "";
             e.onChange(l || "");
           }
