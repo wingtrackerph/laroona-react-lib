@@ -6026,7 +6026,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
         {
           ref: t,
           name: e.name,
-          value: e.value ? Br(e.value) : null,
+          value: e.value ? Br(e.value) : void 0,
           disabled: e.disabled,
           onKeyDown: n,
           minDate: e.disablePastDates ? Br() : void 0,
@@ -6043,7 +6043,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           ref: t,
           name: e.name,
           defaultOpenValue: Br("00:00:00", "HH:mm:ss"),
-          value: e.value ? Br(e.value, "HH:mm:ss") : null,
+          value: e.value ? Br(e.value, "HH:mm:ss") : void 0,
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
@@ -6060,7 +6060,7 @@ const Br = /* @__PURE__ */ Qc(Yx), qx = q.forwardRef((e, t) => {
           name: e.name,
           format: "HH:mm:ss.SSS",
           defaultOpenValue: Br("00:00:00.000", "HH:mm:ss.SSS"),
-          value: e.value ? Br(e.value, "HH:mm:ss.SSS") : null,
+          value: e.value ? Br(e.value, "HH:mm:ss.SSS") : void 0,
           disabled: e.disabled,
           onKeyDown: n,
           onChange: (i, s) => {
