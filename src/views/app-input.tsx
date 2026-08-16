@@ -128,7 +128,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                 <DatePicker
                     ref={ref}
                     name={properties.name}
-                    value={properties.value && dayjs(properties.value).isValid() ? dayjs(properties.value) : null}
+                    value={properties.value && dayjs(properties.value).isValid() ? dayjs(properties.value) : properties.value}
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
                     minDate={properties.disablePastDates ? dayjs() : undefined}
@@ -151,7 +151,7 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     value={
                         properties.value && dayjs(properties.value, "HH:mm:ss").isValid()
                             ? dayjs(properties.value, "HH:mm:ss")
-                            : null
+                            : properties.value
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}

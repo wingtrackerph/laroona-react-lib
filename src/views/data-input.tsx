@@ -90,30 +90,6 @@ const DataInput = (properties: Properties) => {
                 value = data[timeKey];
             }
         }
-    } else if (type == "time" || type == "timemilli") {
-        // Handle standalone time types - extract time from datetime if needed
-        if (value) {
-            // Check if value is a datetime string (contains space or T)
-            if (typeof value === "string" && (value.includes(" ") || value.includes("T"))) {
-                const parsedMoment = moment(value);
-                if (parsedMoment.isValid()) {
-                    value = type == "time" 
-                        ? parsedMoment.format("HH:mm:ss")
-                        : parsedMoment.format("HH:mm:ss.SSS");
-                }
-            }
-        }
-    } else if (type == "date") {
-        // Handle standalone date type - extract date from datetime if needed
-        if (value) {
-            // Check if value is a datetime string (contains space or T)
-            if (typeof value === "string" && (value.includes(" ") || value.includes("T"))) {
-                const parsedMoment = moment(value);
-                if (parsedMoment.isValid()) {
-                    value = parsedMoment.format("YYYY-MM-DD");
-                }
-            }
-        }
     }
 
     let disabledValues = undefined;
