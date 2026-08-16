@@ -150,7 +150,11 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     name={properties.name}
                     format="HH:mm:ss"
                     value={
-                        properties.value ? dayjs(properties.value, "HH:mm:ss") : null
+                        properties.value 
+                            ? (typeof properties.value === 'string' && properties.value.length <= 8
+                                ? dayjs(`1970-01-01 ${properties.value}`)
+                                : dayjs(properties.value))
+                            : null
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
@@ -172,7 +176,11 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     name={properties.name}
                     format="HH:mm:ss.SSS"
                     value={
-                        properties.value ? dayjs(properties.value, "HH:mm:ss.SSS") : null
+                        properties.value 
+                            ? (typeof properties.value === 'string' && properties.value.length <= 12
+                                ? dayjs(`1970-01-01 ${properties.value}`)
+                                : dayjs(properties.value))
+                            : null
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
