@@ -12,6 +12,8 @@ interface Properties {
     wrapContent?: boolean;
     isInitialValueDisabled?: boolean;
     disablePastDates?: boolean;
+    /** Show a time input on a 12-hour clock; the stored value stays HH:mm:ss. */
+    use12Hours?: boolean;
     hidden?: boolean;
     minValue?: any;
     maxValue?: any;

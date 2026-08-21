@@ -17,6 +17,12 @@ interface Properties {
     horizontalStyle?: boolean;
     wrapContent?: boolean;
     disablePastDates?: boolean;
+    /**
+     * Show a time input on a 12-hour clock ("8:00 AM") instead of the 24-hour
+     * default. DISPLAY ONLY: the value handed back is always "HH:mm:ss", so an
+     * API contract never changes because a screen changed how it reads.
+     */
+    use12Hours?: boolean;
     hidden?: boolean;
     style?: any;
     maxLength?: number;

@@ -29,6 +29,12 @@ interface Properties {
     horizontalStyle?: boolean;
     wrapContent?: boolean;
     disablePastDates?: boolean;
+    /**
+     * Show a time input on a 12-hour clock ("8:00 AM") instead of the 24-hour
+     * default. DISPLAY ONLY: the value handed back is always "HH:mm:ss", so an
+     * API contract never changes because a screen changed how it reads.
+     */
+    use12Hours?: boolean;
     hidden?: boolean;
     style?: any;
     maxLength?: number;
@@ -147,7 +153,8 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                 <TimePicker
                     ref={ref}
                     name={properties.name}
-                    format="HH:mm:ss"
+                    format={properties.use12Hours ? "h:mm A" : "HH:mm:ss"}
+                    use12Hours={properties.use12Hours}
                     value={
                         properties.value 
                             ? (typeof properties.value === 'string' && properties.value.length <= 8
@@ -157,13 +164,13 @@ const AppInput = React.forwardRef<any, Properties>((properties, ref) => {
                     }
                     disabled={properties.disabled}
                     onKeyDown={handleKeyDown}
-                    onChange={(time, timeString) => {
-                        let value = typeof timeString === "string" 
-                            ? timeString 
-                            : Array.isArray(timeString) 
-                            ? timeString[0] 
-                            : "";
-                        properties.onChange(value || "");
+                    onChange={(time) => {
+                        // Read the VALUE off the dayjs object, never off the
+                        // formatted string: the string follows `format`, so
+                        // deriving from it would make a 12-hour display start
+                        // storing "8:00 AM" and silently break the API. The
+                        // stored shape is "HH:mm:ss" whatever the screen shows.
+                        properties.onChange(time ? time.format("HH:mm:ss") : "");
                     }}
                 />
             );

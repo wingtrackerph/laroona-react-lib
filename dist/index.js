@@ -5763,13 +5763,13 @@ const pm = W.createContext({}), ym = () => W.useContext(pm), AM = ({ children: e
         {
           ref: t,
           name: e.name,
-          format: "HH:mm:ss",
+          format: e.use12Hours ? "h:mm A" : "HH:mm:ss",
+          use12Hours: e.use12Hours,
           value: e.value ? typeof e.value == "string" && e.value.length <= 8 ? Vr(`1970-01-01 ${e.value}`) : Vr(e.value) : null,
           disabled: e.disabled,
           onKeyDown: n,
-          onChange: (i, s) => {
-            let l = typeof s == "string" ? s : Array.isArray(s) ? s[0] : "";
-            e.onChange(l || "");
+          onChange: (i) => {
+            e.onChange(i ? i.format("HH:mm:ss") : "");
           }
         }
       );
@@ -11644,6 +11644,7 @@ const R_ = vs({
       wrapContent: e.wrapContent,
       disabledValues: u,
       disablePastDates: e.disablePastDates,
+      use12Hours: e.use12Hours,
       hidden: e.hidden,
       minValue: e.minValue,
       maxValue: e.maxValue,
